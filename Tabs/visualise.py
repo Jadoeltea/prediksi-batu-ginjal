@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 from sklearn import tree
 from function import train_model  
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 # Fungsi untuk menyiapkan data berdasarkan usia
 def prepare_data(data):
     data['Age Group'] = pd.cut(data['age'], bins=range(0, 100, 10), labels=[f'{i}-{i+9}' for i in range(0, 90, 10)])
@@ -50,4 +50,4 @@ def app(data, x, y):
             feature_names=x.columns, class_names=['nockd', 'ckd']
         )
         st.graphviz_chart(dot_data)
-        st.set_option('deprecation.showPyplotGlobalUse', False)
+       
