@@ -19,7 +19,7 @@ Dengan fokus pada deteksi dini, pencegahan, perawatan yang lebih tepat, serta pe
 
 
 ### **Solution statements**
-Saya akan mencoba mengembangkan sebuah aplikasi menggunakan bahasa pemrograman Python  untuk memprediksi penyakit batu Ginjal.
+Saya akan mencoba mengembangkan sebuah aplikasi menggunakan bahasa pemrograman Python  untuk memprediksi penyakit batu Ginjal dengan menggunakan algoritma ID3 (Iterative Dichotomiser 3) yang digunakan untuk membuat pohon keputusan.
 
 ### **Data Understanding**
 Dalam proyek ini, saya menggunakan dataset dari [Kaggle](https://www.kaggle.com). Dataset ini, yang disebut [Chronic KIdney Disease dataset](https://www.kaggle.com/datasets/mansoordaku/ckdisease?resource=download)
