@@ -3,64 +3,86 @@
 ### Nim   : 231352002
 ### Kelas : Malam B
 
-# Memahami Kesehatan Jantung Dengan Teknologi : Aplikasi Data Mining dalam memprediksi Penyakit Jantung menggunakan Python
+# Aplikasi Prediksi Batu Ginjal
 ### **Summary**
 
-Penyakit jantung adalah salah satu masalah kesehatan yang paling umum di seluruh dunia. Menurut Organisasi Kesehatan Dunia (World Health Organization), penyakit jantung adalah penyebab kematian nomor satu di seluruh dunia. Oleh karena itu, penting untuk dapat mendeteksi dan memprediksi risiko penyakit jantung dengan cepat dan akurat.    
+Aplikasi prediksi batu ginjal adalah sebuah program komputer yang menggunakan informasi tentang kesehatan seseorang, seperti riwayat medis dan hasil tes, untuk memperkirakan risiko pembentukan batu ginjal. Dengan menganalisis data ini, aplikasi memberikan perkiraan tentang seberapa besar kemungkinan seseorang mengalami masalah dengan batu ginjal di masa depan. Hal ini membantu dokter untuk memberikan saran pencegahan atau perawatan lebih awal kepada individu yang berisiko tinggi.    
 
 
 ### **Business Understanding**
-Teknologi dan metode ilmu data (data mining) telah menjadi alat yang sangat berguna dalam pemahaman dan prediksi penyakit jantung. Dalam konteks ini, data mining digunakan untuk menganalisis sejumlah besar data medis yang mencakup informasi tentang pasien, faktor risiko, gejala, dan hasil tes medis. 
+Pengembangan aplikasi ini mungkin merupakan bagian dari inovasi lebih luas dalam teknologi kesehatan. Hal ini dapat mencakup penggunaan machine learning atau kecerdasan buatan untuk menghasilkan prediksi yang lebih akurat dan memperluas jangkauan penggunaan aplikasi untuk prediksi penyakit lainnya.
 
 
 ### **Goals**
-Dengan menggunakan teknik-teknik data mining, kita dapat mengidentifikasi pola dan hubungan dalam data ini untuk memprediksi risiko atau kemungkinan seseorang terkena penyakit jantung. Dalam  Aplikasi ini akan memungkinkan pengguna untuk memasukkan informasi pribadi mereka, seperti usia, jenis kelamin, nilai kolesterol, tekanan darah, dan gejala lainnya, dan akan memberikan prediksi tentang apakah mereka berisiko terkena penyakit jantung.
+Dengan fokus pada deteksi dini, pencegahan, perawatan yang lebih tepat, serta pengurangan beban pada sistem kesehatan, aplikasi prediksi batu ginjal bertujuan untuk membantu individu dan menyumbangkan kemajuan dalam sektor kesehatan melalui teknologi yang inovatif.
 
 
 ### **Solution statements**
-Saya akan mencoba mengembangkan sebuah aplikasi menggunakan bahasa pemrograman Python dan teknik data mining untuk memprediksi penyakit jantung.
+Saya akan mencoba mengembangkan sebuah aplikasi menggunakan bahasa pemrograman Python  untuk memprediksi penyakit batu Ginjal.
 
 ### **Data Understanding**
-Dalam proyek ini, saya menggunakan dataset dari [Kaggle](https://www.kaggle.com). Dataset ini, yang disebut [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland)
-, berisi data kesehatan yang kita gunakan untuk menganalisis dan memprediksi penyakit jantung. dataset [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland) ini dipilih karena relevansi atribut-atributnya dalam proyek ini."
+Dalam proyek ini, saya menggunakan dataset dari [Kaggle](https://www.kaggle.com). Dataset ini, yang disebut [Chronic KIdney Disease dataset](https://www.kaggle.com/datasets/mansoordaku/ckdisease?resource=download)
+, berisi data kesehatan yang kita gunakan untuk menganalisis dan memprediksi penyakit batu ginjal. dataset [Chronic KIdney Disease dataset](https://www.kaggle.com/datasets/mansoordaku/ckdisease?resource=download) ini dipilih karena relevansi atribut-atributnya dalam proyek ini."
 
 ###  **Variabel-variabel pada Aplikasi Data Mining dalam memprediksi Penyakit Jantung menggunakan Python** 
 Selanjutnya variabel atau fitur pada data ini adalah sebagai berikut :  
 
     -) age/umur (umur dalam tahun)
-    -) sex/Jenis Kelamin (1 = laki-laki, 0 = perempuan)
-    -) cp/Jenis Nyeri dada (nyeri dada dengan nilai 0(tidak ada), 1(ringan), 2(signifikan), dan 3(heabt))
-    -) trestbps/Tekanan darah (tekanan darah)
-    -) chol/Nilai kolesterol (konsentrasi kolesterol dalam mg/dl)
-    -) fbs/Gula darah (konsentrasi gula setelah puasa dalam 8 jam dengan nilai 1(> 120 mg/dl) dan 0(< 120 mg/dL)
-    -) restecg/Nilai ECG (hasil ECG dengan nilai 0(tidak ada kelainan), 1(kelainan minor), 2(kelainan signifikan)
-    -) thalach/Detak Jantung maksimal (detak jantung maksimal setelah latihan fisik intens)
-    -) exang/Induksi Angina ( ada tidaknya rasa sakit atau tekanan pada dada akibat kurangnya pasokan darah dan oksigen yang cukup ke jantung)
-    -) oldpeak/Penurunan segmen ST pada EKG (penurunan segmen ST pada elektrokardiogram (EKG) setelah latihan fisik)
-    -) slope/Tingkat Penurunan ST segmen (Tingkat penurunan ST segment dengan nilai 0(tidak ada), 1(lambat), 2(cepat))
-    -) ca/Jumlah Sumbatan Arteri Koroner (jumlah sumbatan arteri koroner utama dengan nilai 0(tidak ada), 1(1 arteri), 2(2 arteri), 3(3 arteri)
-    -) thal (aliran darah ke otot jantung dengan nilai 0 = normal, 1 = fixed defect, 2 = reversable defect)
-    -) target (mengidap penyakit jantung atau tidak)
+    -) Blood Pressure / bp (in mm/Hg)
+    -) Specific Gravity / sg - (1.005,1.010,1.015,1.020,1.025)
+    -) Albumin / al - (0,1,2,3,4,5)
+    -) Sugar / su - (0,1,2,3,4,5)
+    -) Red Blood Cells / rbc - (normal,abnormal)
+    -) Pus Cell / pc - (normal,abnormal)
+    -) Pus Cell clumps / pcc - (present,notpresent)
+    -) Bacteria / ba  - (present,notpresent)
+    -) Blood Glucose Random / bgr in mgs/dl
+    -) Blood Urea  / bu (in mgs/dl)
+    -) Serum Creatinine / sc (in mgs/dl)
+    -) Sodium / sod (in mEq/L)
+    -) Potassium / pot (in mEq/L)
+    -) Hemoglobin / hemo (in gms)
+    -) Packed  Cell Volume /pcv
+    -) White Blood Cell Count / wc (in cells/cumm)
+    -) Red Blood Cell Count / rc (in millions/cmm)
+    -) Hypertension / htn (yes,no)
+    -) Diabetes Mellitus / dm (yes,no)
+    -) Coronary Artery Disease / cad (yes,no)
+    -) Appetite / appet (good,poor)
+    -) Pedal Edema / pe (yes,no)	
+    -) Anemia / ane (yes,no)
+    -) Classification / class (ckd,notckd)
 
-Adapun tipe data dalam dataset [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland) yaitu:
+Adapun tipe data dalam dataset [Chronic KIdney Disease dataset](https://www.kaggle.com/datasets/mansoordaku/ckdisease?resource=download) yaitu:
 
  No|  Column  |  Non-Null Count | Dtype  |
 ---| ---------| ----------------|--------| 
- 0 | age      | 303 non-null    | int64  |
- 1 | sex      | 303 non-null    | int64  |
- 2 | cp       | 303 non-null    | int64  |
- 3 | trestbps | 303 non-null    | int64  |
- 4 | chol     | 303 non-null    | int64  |
- 5 | fbs      | 303 non-null    | int64  |
- 6 | restecg  | 303 non-null    | int64  |
- 7 | thalach  | 303 non-null    | int64  |
- 8 | exang    | 303 non-null    | int64  |
- 9 | oldpeak  | 303 non-null    | float64|
- 10| slope    | 303 non-null    | int64  |
- 11| ca       | 303 non-null    | int64  |
- 12| thal     | 303 non-null    | int64  |
- 13| target   | 303 non-null    | int64  |
-dtypes: float64(1), int64(13)
+ 0  | age            | 391 non-null  |  float64
+ 1  | bp             | 388 non-null  |  float64
+ 2  | sg             | 353 non-null  |  float64
+ 3  | al             | 354 non-null  |  float64
+ 4  | su             | 351 non-null  |  float64
+ 5  | rbc            | 248 non-null  |  object 
+ 6  | pc             | 335 non-null  |  object 
+ 7  | pcc            | 396 non-null  |  object 
+ 8  | ba             | 396 non-null  |  object 
+ 9  | bgr            | 356 non-null  |  float64
+ 10 | bu             | 381 non-null  |  float64
+ 11 | sc             | 383 non-null  |  float64
+ 12 | sod            | 313 non-null  |  float64
+ 13 | pot            | 312 non-null  |  float64
+ 14 | hemo           | 348 non-null  |  float64
+ 15 | pcv            | 330 non-null  |  object 
+ 16 | wc             | 295 non-null  |  object 
+ 17 | rc             | 270 non-null  |  object 
+ 18 | htn            | 398 non-null  |  object 
+ 19 | dm             | 398 non-null  |  object 
+ 20 | cad            | 398 non-null  |  object 
+ 21 | appet          | 399 non-null  |  object 
+ 22 | pe             | 399 non-null  |  object 
+ 23 | ane            | 399 non-null  |  object 
+ 24 | classification |400 non-null   |  object 
+dtypes: float64(11), object(14)
 
 **Visualisasi Data**:
 - Dalam Melakukan pemahaman terhadap dataset [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland), saya membuat empat grafik [Histogram](https://drive.google.com/file/d/1lmHKm_LYWlYxfqwbLz03c3m4cxt65v1B/view?usp=sharing) yang berbeda dimana, pada grafik [Histogram](https://drive.google.com/file/d/1lmHKm_LYWlYxfqwbLz03c3m4cxt65v1B/view?usp=sharing) yang pertama menunjukkan jumlah penderita penyakit jantung didalam dataset [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland), yang kedua jumlah penderita berdasarkan jenis kelamin, berdasarkan golongan Usia, dan terakhir berdasarkan jumlah penderita jantung berdasarkan jumlah kolesterol pasien.
@@ -70,7 +92,28 @@ dtypes: float64(1), int64(13)
 
 ## Data Preparation
 Teknik data preparation yang dilakukan adalah :
-- Konfigurasi API Kaggle dengan vscode
+- Import Dataset di Kaggle
+import os
+import json
+
+kaggle_json = {
+    "username": "jadoeltea",
+    "key": "e4829efe858500918d02c29ecf585080"
+}
+
+kaggle_dir = '/root/.kaggle'
+kaggle_file = 'kaggle.json'
+kaggle_path = os.path.join(kaggle_dir, kaggle_file)
+
+if not os.path.exists(kaggle_dir):
+    os.makedirs(kaggle_dir)
+
+
+with open(kaggle_path, 'w') as file:
+    json.dump(kaggle_json, file)
+
+os.chmod(kaggle_path, 0o600)
+
 - mendownload file dari Kaggle
 - Menentukan library yang akan digunakan
 - Membaca dataset [Heart Disease Cleveland](https://www.kaggle.com/datasets/ritwikb3/heart-disease-cleveland) yang telah didownload, yaitu file Heart_disease_cleveland_new.csv kemudian saya rename menjadi heart.csv agar memudahkan 
