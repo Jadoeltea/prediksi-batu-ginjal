@@ -426,83 +426,36 @@ pickle.dump(dtc, open(filename,'wb'))
 ```
 
 ## Modeling
-Prediksi Aplikasi Data Mining dalam memprediksi Penyakit Jantung menggunakan Python menggunakan algoritma Support Vector Machine (SVM), Alasan mengapa menggunakan algoritma Support Vector Machine (SVM) untuk model prediksi penyakit jantung dalam proyek ini adalah sebagai berikut:
+Untuk mengimplementasikan algoritma ID3 atau pohon keputusan secara matematis untuk dataset Chronic Kidney Disease (CKD), rumus yang digunakan adalah untuk menghitung entropy dan information gain.
 
-    1. Kemampuan Memisahkan Data yang Kompleks: SVM adalah algoritma yang sangat efektif dalam memisahkan data yang kompleks dan tidak linier. Data medis yang digunakan dalam prediksi penyakit jantung seringkali memiliki hubungan yang kompleks antara atribut-atributnya. SVM dapat menangani hubungan ini dengan baik, bahkan dalam kasus data yang tidak linier.
+1. Entropy:
 
-    2. Kemampuan Generalisasi: SVM memiliki kemampuan yang baik untuk generalisasi, artinya kemampuan untuk menghasilkan model yang tidak hanya baik pada data pelatihan, tetapi juga mampu menggeneralisasi dan memberikan prediksi yang baik pada data baru yang belum pernah dilihat sebelumnya. Ini penting dalam aplikasi medis di mana kita ingin dapat memprediksi penyakit jantung pada pasien baru.
+Entropy dari sebuah set data dapat dihitung menggunakan rumus:
 
-    3. Kemampuan Menangani Data yang Tidak Seimbang: Data medis sering kali tidak seimbang, yaitu jumlah pasien dengan penyakit jantung mungkin jauh lebih sedikit dari pada yang sehat. SVM memiliki teknik penalti yang dapat mengatasi masalah ini dan memberikan prediksi yang seimbang.
+![alt text](https://github.com/Jadoeltea/prediksi-batu-ginjal/blob/main/public/9.PNG?raw=true)
 
-    4. Kemampuan Menangani Data Berkualitas Rendah: Data medis sering kali memiliki data yang hilang atau berkualitas rendah. SVM dapat mengatasi masalah ini dengan baik melalui teknik penanganan data yang hilang dan pemrosesan data.
+2. Information Gain:
 
-    5. Interpretabilitas: SVM memberikan hasil yang relatif mudah diinterpretasikan. Ini penting dalam konteks medis di mana profesional kesehatan ingin memahami faktor-faktor yang berkontribusi pada prediksi penyakit jantung.
+Information gain untuk sebuah atribut dalam dataset dapat dihitung sebagai perbedaan antara entropy dataset keseluruhan sebelum dan setelah pemisahan berdasarkan atribut tersebut. Rumusnya adalah:
 
-    6. Kinerja yang Baik: SVM seringkali memberikan kinerja yang baik dalam banyak kasus, termasuk dalam prediksi penyakit jantung. Dengan parameter yang disesuaikan dengan baik, SVM dapat memberikan akurasi yang tinggi.
+![alt text](https://github.com/Jadoeltea/prediksi-batu-ginjal/blob/main/public/10.PNG?raw=true)
 
-    7. Pendukung Optimal: SVM menghasilkan "support vectors" yang merupakan contoh data yang paling penting untuk pemisahan kelas. Ini berarti kita dapat fokus pada subset data yang paling relevan, yang mengurangi kompleksitas model.
 
-    8. Pengendalian Overfitting: SVM memiliki parameter penalti yang dapat mengontrol overfitting, sehingga kita dapat menghasilkan model yang tidak terlalu rumit dan lebih mungkin untuk menggeneralisasi dengan baik.
-
-    9. Kemampuan Mengatasi Noise: SVM memiliki toleransi terhadap noise dalam data, yang sering kali ada dalam data medis.
-
-    10. Kemampuan Menangani Data Multivariat: Data medis sering kali memiliki banyak atribut yang berkorelasi. SVM dapat menangani data multivariat ini dan mempertimbangkan korelasi antara atribut untuk meningkatkan prediksi.
+Dengan menggunakan rumus-rumus tersebut, langkah-langkah ID3 untuk membangun pohon keputusan melibatkan perhitungan entropy dan information gain untuk setiap atribut dalam dataset CKD. Atribut dengan information gain tertinggi dipilih sebagai atribut pembagi pada setiap level pohon keputusan, dan proses ini diulang hingga terbentuk pohon keputusan yang lengkap.
 
 ## Evaluation
-Sebelum membuat model prediksi saya mencoba membuat evaluasi tingkat akurasi data menggunakan algoritma SVM. berikut :
+Hasil dari evaluasi model prediksi penyakit ginjal berdasarkan data training dan data testing menunjukkan kinerja yang sangat baik. Model yang dikembangkan memiliki tingkat akurasi yang tinggi pada kedua dataset, dengan akurasi data training sebesar 99.375% dan akurasi data testing mencapai 100%.
 
-1. Matrik [konfusi](https://drive.google.com/file/d/1cut75Gr_3mGGf5MEqDlU-WY0sYIbR09S/view?usp=sharing), Matriks konfusi adalah alat evaluasi yang umum digunakan dalam pemodelan klasifikasi untuk mengukur sejauh mana model klasifikasi dapat memprediksi dengan benar kelas-kelas target. Matriks konfusi biasanya dibagi menjadi empat sel atau komponen, yang mencakup True Positives (TP), False Positives (FP), True Negatives (TN), dan False Negatives (FN). hasil matriks konfusi untuk data pelatihan dan data uji menggunakan algoritma SVM adalah :
-    a.) Matriks Konfusi pada Data Pelatihan:
+Dilihat dari confusion matrix, model berhasil memprediksi semua sampel pada data testing dengan benar. Tidak ada sampel yang salah diklasifikasikan, dengan 52 sampel dari kelas 0 dan 28 sampel dari kelas 1 semuanya terprediksi dengan tepat.
 
-        - True Positives (TP): Jumlah kasus di mana model dengan benar memprediksi pasien menderita penyakit jantung (positif) ketika mereka sebenarnya menderita penyakit jantung. Dalam kasus ini, ada 90 pasien yang benar-benar menderita penyakit jantung dan telah diprediksi dengan benar oleh model.
+Dalam classification report, hasil evaluasi model menunjukkan bahwa model memiliki precision, recall, dan f1-score sebesar 1.00 untuk kedua kelas. Hal ini menandakan bahwa model dapat memprediksi kedua kelas (CKD dan non-CKD) dengan sempurna.
 
-        - False Positives (FP): Jumlah kasus di mana model salah memprediksi pasien menderita penyakit jantung (positif) ketika sebenarnya mereka tidak menderita penyakit jantung (negatif). Dalam kasus ini, ada 14 pasien yang tidak menderita penyakit jantung, tetapi model secara keliru memprediksi mereka sebagai positif.
-
-        - True Negatives (TN): Jumlah kasus di mana model dengan benar memprediksi pasien tidak menderita penyakit jantung (negatif) ketika mereka sebenarnya tidak menderita penyakit jantung. Dalam kasus ini, ada 117 pasien yang benar-benar tidak menderita penyakit jantung dan telah diprediksi dengan benar oleh model.
-
-        - False Negatives (FN): Jumlah kasus di mana model salah memprediksi pasien tidak menderita penyakit jantung (negatif) ketika sebenarnya mereka menderita penyakit jantung (positif). Dalam kasus ini, ada 21 pasien yang sebenarnya menderita penyakit jantung, tetapi model secara keliru memprediksi mereka sebagai negatif.
-
-    b.) Matriks Konfusi pada Data Uji:
-
-        - True Positives (TP): Jumlah kasus di mana model dengan benar memprediksi pasien menderita penyakit jantung (positif) ketika mereka sebenarnya menderita penyakit jantung. Dalam kasus ini, ada 22 pasien yang benar-benar menderita penyakit jantung dan telah diprediksi dengan benar oleh model.
-
-        - False Positives (FP): Jumlah kasus di mana model salah memprediksi pasien menderita penyakit jantung (positif) ketika sebenarnya mereka tidak menderita penyakit jantung (negatif). Dalam kasus ini, ada 6 pasien yang tidak menderita penyakit jantung, tetapi model secara keliru memprediksi mereka sebagai positif.
-
-        - True Negatives (TN): Jumlah kasus di mana model dengan benar memprediksi pasien tidak menderita penyakit jantung (negatif) ketika mereka sebenarnya tidak menderita penyakit jantung. Dalam kasus ini, ada 27 pasien yang benar-benar tidak menderita penyakit jantung dan telah diprediksi dengan benar oleh model.
-
-        - False Negatives (FN): Jumlah kasus di mana model salah memprediksi pasien tidak menderita penyakit jantung (negatif) ketika sebenarnya mereka menderita penyakit jantung (positif). Dalam kasus ini, ada 6 pasien yang sebenarnya menderita penyakit jantung, tetapi model secara keliru memprediksi mereka sebagai negatif.
-
-2. dan hasil menggunakan metrik [**akurasi, precision, recall, dan F1 score**](https://drive.google.com/file/d/1ohVKDf1sJquRSYdyne83HxGpwfeavDvd/view?usp=sharing) :
-
-        - Precision (presisi):
-        Untuk kelas 0 (label 0): Presisi adalah 0.82, yang berarti bahwa dari semua contoh yang diprediksi sebagai kelas 0, sekitar 82% dari prediksi tersebut adalah benar (True Positives) dan sekitar 18% adalah kesalahan (False Positives).
-        Untuk kelas 1 (label 1): Presisi adalah 0.79, yang berarti bahwa dari semua contoh yang diprediksi sebagai kelas 1, sekitar 79% dari prediksi tersebut adalah benar (True Positives) dan sekitar 21% adalah kesalahan (False Positives).
-
-        - Recall (sensitivitas):
-        Untuk kelas 0 (label 0): Recall adalah 0.82, yang berarti bahwa dari semua contoh yang sebenarnya adalah kelas 0, model dapat mengidentifikasinya dengan benar sekitar 82% (True Positives), sedangkan sekitar 18% dari kasus kelas 0 tidak terdeteksi (False Negatives).
-        Untuk kelas 1 (label 1): Recall adalah 0.79, yang berarti bahwa dari semua contoh yang sebenarnya adalah kelas 1, model dapat mengidentifikasinya dengan benar sekitar 79% (True Positives), sedangkan sekitar 21% dari kasus kelas 1 tidak terdeteksi (False Negatives).
-
-        - F1-Score (skor F1):
-        F1-Score adalah rata-rata harmonik dari presisi dan recall. Untuk kelas 0, skor F1 adalah sekitar 0.82, dan untuk kelas 1, skor F1 adalah sekitar 0.79. Skor F1 menggabungkan presisi dan recall ke dalam satu metrik yang memberikan gambaran tentang sejauh mana model dapat memprediksi kelas target dengan baik.
-
-        - Support (dukungan):
-        Dukungan adalah jumlah contoh dalam data uji yang termasuk dalam masing-masing kelas. Terdapat 33 contoh kelas 0 dan 28 contoh kelas 1 dalam data uji.
-
-        - Accuracy (akurasi):
-        Akurasi adalah persentase total prediksi yang benar dibandingkan dengan jumlah total contoh dalam data uji. Akurasi adalah sekitar 0.80 atau 80%, yang berarti model dapat memprediksi dengan benar sekitar 80% dari semua contoh dalam data uji.
-
-        - Macro Average (Rata-rata Makro):
-        Rata-rata makro adalah rata-rata dari metrik-metrik evaluasi untuk setiap kelas secara terpisah. Dalam kasus ini, rata-rata makro untuk presisi, recall, dan F1-score adalah sekitar 0.80, yang merupakan rata-rata dari metrik-metrik tersebut untuk kedua kelas.
-
-        - Weighted Average (Rata-rata Berbobot):
-        Rata-rata berbobot memberikan bobot yang lebih besar kepada kelas dengan dukungan yang lebih tinggi. Dalam kasus ini, rata-rata berbobot untuk presisi, recall, dan F1-score adalah sekitar 0.80, yang juga merupakan rata-rata dari metrik-metrik tersebut dengan mempertimbangkan jumlah dukungan masing-masing kelas.
-
-Dari hasil Laporan klasifikasi ini sesuai dengan konteks data yang memberikan gambaran tentang sejauh mana model klasifikasi berhasil dalam memprediksi kelas target(pasien penderita penyakit jantung), baik untuk kelas 0(tidak) maupun kelas 1(ya). 
+Secara keseluruhan, hasil evaluasi model menunjukkan performa yang sangat baik dengan nilai akurasi yang tinggi dan hasil evaluasi lainnya yang mencapai nilai maksimal. Ini menunjukkan bahwa model memiliki kemampuan yang sangat baik dalam memprediksi penyakit ginjal berdasarkan atribut-atribut yang ada dalam dataset.
 
 
 ## Deployment
-Berikut hasil dari akhir proyek [APLIKASI PREDIKSI PENYAKIT JANTUNG](https://s.id/TugasMLIrfanZulkarnaen)
-ada pun [screenshoot](https://drive.google.com/file/d/17oeDQ0akI0VExSBDqQjWl9WDLlMrLJQR/view?usp=sharing) nya.
+Berikut hasil dari akhir proyek [APLIKASI PREDIKSI PENYAKIT BATU GINJAL](https://s.id/AppPredictBatuGinjal)
+![alt text](https://github.com/Jadoeltea/prediksi-batu-ginjal/blob/main/halaman%20prediksi.PNG?raw=true)
 
 
 
