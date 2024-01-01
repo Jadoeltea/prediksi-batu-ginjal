@@ -1,9 +1,10 @@
 # Laporan Proyek Machine Learning
 ### Nama  : **Irfan Zulkarnaen**
 ### Nim   : 231352002
-### Kelas : Malam B
+### Kelas : Malam A
 
 # Aplikasi Prediksi Batu Ginjal
+![alt text](https://github.com/Jadoeltea/prediksi-batu-ginjal/blob/main/ckd.jpg?raw=true)
 ### **Summary**
 
 Aplikasi prediksi batu ginjal adalah sebuah program komputer yang menggunakan informasi tentang kesehatan seseorang, seperti riwayat medis dan hasil tes, untuk memperkirakan risiko pembentukan batu ginjal. Dengan menganalisis data ini, aplikasi memberikan perkiraan tentang seberapa besar kemungkinan seseorang mengalami masalah dengan batu ginjal di masa depan. Hal ini membantu dokter untuk memberikan saran pencegahan atau perawatan lebih awal kepada individu yang berisiko tinggi.    
